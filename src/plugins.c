@@ -86,6 +86,7 @@ extern struct lyplg_ext_record plugins_nacm[];
 extern struct lyplg_ext_record plugins_yangdata[];
 extern struct lyplg_ext_record plugins_schema_mount[];
 extern struct lyplg_ext_record plugins_structure[];
+extern struct lyplg_ext_record plugins_full_embed[];
 
 static pthread_mutex_t plugins_guard = PTHREAD_MUTEX_INITIALIZER;
 
