@@ -264,6 +264,14 @@ repeat:
                             break;
                         }
                     }
+                    if (!strcmp(parent->exts[u].def->name, "full-embed") &&
+                            !strcmp(parent->exts[u].def->module->name, "ietf-yang-full-embed")) {
+                        lyplg_ext_full_embed_create_context(&parent->exts[u], &sm_ctx);
+                        if (sm_ctx) {
+                            /* some usable context created */
+                            break;
+                        }
+                    }
                 }
                 if (sm_ctx) {
                     /* get the first node from the first usable module */

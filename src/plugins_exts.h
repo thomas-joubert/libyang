@@ -1040,7 +1040,7 @@ LIBYANG_API_DECL LY_ERR lyplg_ext_insert(struct lyd_node *parent, struct lyd_nod
 LIBYANG_API_DECL LY_ERR lyplg_ext_schema_mount_get_parent_ref(const struct lysc_ext_instance *ext, struct ly_set **refs);
 
 /**
- * @brief Allocate a new context for a particular instance of the yangmnt:mount-point extension.
+ * @brief Allocate a new context for a particular instance of the full_embed extension.
  * Caller is responsible for **freeing** the created context.
  *
  * @param[in] ext Compiled extension instance.
@@ -1048,6 +1048,25 @@ LIBYANG_API_DECL LY_ERR lyplg_ext_schema_mount_get_parent_ref(const struct lysc_
  * @return LY_ERR value.
  */
 LIBYANG_API_DECL LY_ERR lyplg_ext_schema_mount_create_context(const struct lysc_ext_instance *ext, struct ly_ctx **ctx);
+
+/**
+ * @brief Expand parent-reference xpath expressions
+ *
+ * @param[in] ext Context allocated for extension.
+ * @param[out] refs Set of schema node matching parent-reference XPaths.
+ * @return LY_ERR value.
+ */
+LIBYANG_API_DECL LY_ERR lyplg_ext_full_embed_get_parent_ref(const struct lysc_ext_instance *ext, struct ly_set **refs);
+
+/**
+ * @brief Allocate a new context for a particular instance of the full-embed extension.
+ * Caller is responsible for **freeing** the created context.
+ *
+ * @param[in] ext Compiled extension instance.
+ * @param[out] ctx Context with modules loaded from the list found in the extension data.
+ * @return LY_ERR value.
+ */
+LIBYANG_API_DECL LY_ERR lyplg_ext_full_embed_create_context(const struct lysc_ext_instance *ext, struct ly_ctx **ctx);
 
 /** @} pluginsExtensions */
 
